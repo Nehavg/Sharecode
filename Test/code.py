@@ -7,12 +7,10 @@ from selenium.webdriver.support.ui import Select
 driver= webdriver.Chrome(executable_path='C:/Users/hp/PycharmProjects/untitled10/Drivers/chromedriver.exe')
 driver.get("https://www.google.com/")
 driver.maximize_window()
+#Search for flipkart in google search
 driver.find_element_by_xpath("//input[@title='Search']").clear()
 driver.find_element_by_xpath("//input[@title='Search']").send_keys("flipkart")
 action=ActionChains(driver)
-
-#driver.find_element_by_xpath('/html[1]/body[1]/div[2]/div[2]/form[1]/div[2]/div[1]/div[2]/div[2]/ul[1]')
-
 driver.find_element_by_xpath("//input[@title='Search']").click()
 driver.implicitly_wait(5)
 driver.find_element_by_xpath('//input[@value="Google Search"]').click()
@@ -44,8 +42,7 @@ driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[1
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]").click()
 
 driver.implicitly_wait(10)
-#driver.find_element_by_xpath("//div[@class='_3092M2 LykW5d'][contains(text(),'Choose a Product')]").click()
-#driver.find_element_by_xpath("//div[contains(@class,'_1k1axX _1DLH7w')]//div[3]//div[2]//div[1]//div[2]").click()
+
 product1_name= driver.find_element_by_xpath("//div[contains(@class,'_1k1axX _1DLH7w')]//div[2]//a[1]")
 print("Product 1 Name:",product1_name.text)
 product1_Price= driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]")
